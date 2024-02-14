@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #FF6B6B;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    transition: color 0.3s;
+}
+
+header img {
+    max-width: 200px;
+    border-radius: 75%;
+    margin-top: 20px;
+    transition: transform 0.3s;
+}
+
+header img:hover {
+    transform: scale(1.1);
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: #ff6b6b;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+section p {
+    line-height: 1.6;
+}
+
+section:hover {
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.2);
+}
+
+section:hover h2 {
+    color: #d93a3a;
+}
+
+footer {
+    background-color: #ff6b6b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+footer:hover {
+    background-color: #d93a3a;
+}
+/* Existing CSS styles remain unchanged */
+
+/* Illumination effect for image sections */
+.memory-img {
+    transition: filter 0.5s;
+    height: auto;
+    width: 100%;
+}
+
+.illuminate {
+    filter: brightness(100%);
+}
+/* Existing CSS styles remain unchanged */
+
+/* Navbar styles */
+nav {
+    background: linear-gradient(to right, #58CAF7, #F48EA0);
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #9600FF; /* Blue color */
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.scroll-to-top:hover {
+    background-color: #555;
+}
+.best-friends {
+    background-image: url('best_background.jpg'); /* Add your best background image */
+    background-size: cover;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.friend-container{
+    display: flex;
+}
+
+.friend-img {
+    max-width:300px; /* Adjust image width as needed */
+    margin-right: 10px; /* Space between images */
+    min-width: 100px;
+}
+
+h3{
+  align-items: center;
+  color: #E84646;
+  margin-left: 30%;
+  font-size: 30px;
+}
