@@ -37,7 +37,7 @@ function sendBirthdayEmail() {
 // Function to schedule the email sending
 function scheduleEmailSending() {
     const birthday = new Date();
-    birthday.setMonth(2); // June (month is 0-indexed)
+    birthday.setMonth(1); // June (month is 0-indexed)
     birthday.setDate(15);
     birthday.setHours(00);
     birthday.setMinutes(00);
