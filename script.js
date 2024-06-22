@@ -7,6 +7,7 @@ document.getElementById('cakeImg').addEventListener('click', function() {
         confetti.stop();
     }, 3000); // Stop confetti after 3 seconds
 });
+
 // Illuminating image sections on hover
 document.querySelectorAll('.memory-img').forEach(image => {
     image.addEventListener('mouseenter', function() {
@@ -17,47 +18,43 @@ document.querySelectorAll('.memory-img').forEach(image => {
         this.classList.remove('illuminate');
     });
 });
-// To stop the animation when the page is not in focus (e.g., when the user switches to another tab)
-document.addEventListener("visibilitychange", function() {
-    if (document.hidden) {
-        pauseAnimation();
-    } else {
-        resumeAnimation();
-    }
-});
 
-// Function to pause animation
-function pauseAnimation() {
-    const friendContainer = document.querySelector('.friend-container');
-    friendContainer.style.animationPlayState = 'paused';
-}
-// To stop the animation when the page is not in focus (e.g., when the user switches to another tab)
-document.addEventListener("visibilitychange", function() {
-    if (document.hidden) {
-        pauseAnimation();
-    } else {
-        resumeAnimation();
-    }
-});
-
-// Function to pause animation
-// Function to pause the animation
-function pauseAnimation() {
-    const friendContainer = document.querySelector('.friend-container');
-    friendContainer.style.animationPlayState = 'paused';
+// Function to send birthday email using EmailJS
+function sendBirthdayEmail() {
+    emailjs.send("service_fg0ucbc", "template_txen3ai", {
+        to_name: "Rifat",
+        from_name: "Fattah",
+        to_email: "rifat2456852@gmail.com",
+        message: "Dear Rifat,\n\nOn your special day, I want to wish you all the happiness in the world. May your day be filled with laughter, joy, and unforgettable moments. You deserve the best, today and always!\n\nHappy birthday, my dear friend!\n\nWith love,\nOne of your best Friends Fattah"
+    })
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+        console.log('FAILED...', error);
+    });
 }
 
-// Function to resume the animation
-function resumeAnimation() {
-    const friendContainer = document.querySelector('.friend-container');
-    friendContainer.style.animationPlayState = 'running';
+// Function to schedule the email sending
+function scheduleEmailSending() {
+    const birthday = new Date();
+    birthday.setMonth(5); // June (month is 0-indexed)
+    birthday.setDate(22);
+    birthday.setHours(11);
+    birthday.setMinutes(06);
+    birthday.setSeconds(10);
+
+    const now = new Date();
+    const timeUntilBirthday = birthday.getTime() - now.getTime();
+
+    if (timeUntilBirthday > 0) {
+        setTimeout(sendBirthdayEmail, timeUntilBirthday);
+    } else {
+        // Schedule for next year if the date has already passed this year
+        birthday.setFullYear(birthday.getFullYear() + 1);
+        const nextYearTimeUntilBirthday = birthday.getTime() - now.getTime();
+        setTimeout(sendBirthdayEmail, nextYearTimeUntilBirthday);
+    }
 }
 
-// To stop the animation when the page is not in focus (e.g., when the user switches to another tab)
-document.addEventListener("visibilitychange", function() {
-    if (document.hidden) {
-        pauseAnimation();
-    } else {
-        resumeAnimation();
-    }
-});
+// Schedule the email when the page loads
+scheduleEmailSending();

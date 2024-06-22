@@ -4,61 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rifat's Birthday</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#wish">Wish</a></li>
-            <li><a href="#memory">Memory</a></li>
-            <li><a href="#amici">Amici Forever</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Birthday</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#wish">Wish</a></li>
+                <li class="nav-item"><a class="nav-link" href="#memory">Memory</a></li>
+                <li class="nav-item"><a class="nav-link" href="#amici">Amici Forever</a></li>
+            </ul>
+        </div>
     </nav>
-  
-    <header>
+
+    <header class="text-center py-5 bg-danger text-white">
         <h1>Happy Birthday, Rifat!</h1>
-        <img src="rifat.jpg" alt="Rifat" id="cakeImg">
+        <img src="rifat.jpg" alt="Rifat" class="rounded-circle mt-3" id="cakeImg" style="max-width: 200px;">
     </header>
-    <main>
-        <section id="wish">
-            <h2>Best Wishes for You</h2>
+    
+    <main class="container mt-4">
+        <section id="wish" class="mb-5">
+            <h2 class="text-center text-danger">Best Wishes for You</h2>
             <p>Dear Rifat,</p>
             <p>On your special day, I want to wish you all the happiness in the world. May your day be filled with laughter, joy, and unforgettable moments. You deserve the best, today and always!</p>
             <p>Happy birthday, my dear friend!</p>
             <p>With love,</p>
             <p>One of your best Friend Fattah</p>
         </section>
-        <!-- Image sections for memories -->
-        <div id="memory">
-        <section class="image-section">
-            <img src="memories1.jpg" alt="Memory 1" class="memory-img">
-        </section>
-        <section class="image-section">
-            <img src="memories2.jpg" alt="Memory 2" class="memory-img">
-        </section>
-        <section class="image-section">
-            <img src="memories3.jpg" alt="Memory 3" class="memory-img">
-        </section>
-        <section class="image-section">
-            <img src="memories4.jpg" alt="Memory 3" class="memory-img">
-        </section>
-        </div>
-        <section class="best-friends" id="amici">
-          <h3>Best Friends</h3>
-        <div class="friend-container">
-        <img src="friend1.jpg" alt="Friend 1" class="friend-img">
-        <img src="friend2.jpg" alt="Friend 2" class="friend-img">
-        <img src="friend3.jpg" alt="Friend 3" class="friend-img">
-        </div>
-      </section>
-  
 
-</main>
-    <footer>
-        <p>&copy; 2024 Urfa Hasan Fattah |<br> Birthday Gift for Rifat</p>
+        <div id="memory" class="row">
+            <div class="col-md-3 col-sm-6 mb-3">
+                <img src="memories1.jpg" alt="Memory 1" class="img-fluid memory-img rounded">
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <img src="memories2.jpg" alt="Memory 2" class="img-fluid memory-img rounded">
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <img src="memories3.jpg" alt="Memory 3" class="img-fluid memory-img rounded">
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <img src="memories4.jpg" alt="Memory 4" class="img-fluid memory-img rounded">
+            </div>
+        </div>
+
+        <section id="amici" class="best-friends py-5">
+            <h3 class="text-center text-danger">Best Friends</h3>
+            <div class="d-flex justify-content-center">
+                <img src="friend1.jpg" alt="Friend 1" class="img-fluid friend-img mx-2">
+                <img src="friend2.jpg" alt="Friend 2" class="img-fluid friend-img mx-2">
+                <img src="friend3.jpg" alt="Friend 3" class="img-fluid friend-img mx-2">
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-3 bg-danger text-white fixed-bottom">
+        <p>&copy; 2024 Urfa Hasan Fattah | Birthday Gift for Rifat</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("mC6GMM4COU56Tm3-Z"); // Replace 'your_user_id' with your actual user ID from EmailJS
+        })();
+    </script>
     <script src="confetti.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
