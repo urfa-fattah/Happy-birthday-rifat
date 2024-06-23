@@ -67,7 +67,7 @@ function checkAndSendEmail() {
     const today = new Date();
     const birthdayMonth = 5; // February (month is 0-indexed)
     const birthdayDate = 23;
-    const birthdayHour = 1;
+    const birthdayHour = 13;
 
     // Get the year when the email was last sent from local storage
     const lastSentYear = localStorage.getItem('lastSentYear');
