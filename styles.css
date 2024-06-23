@@ -85,8 +85,8 @@ footer button:hover {
 }
 
 .friend-img {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 110px;
+    max-height: 110px;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 3px solid #ff1744;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
