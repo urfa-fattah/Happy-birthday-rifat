@@ -23,7 +23,7 @@ header img {
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     height: auto;
-    width: 70%;
+    width: 40px;
 }
 
 header img:hover {
