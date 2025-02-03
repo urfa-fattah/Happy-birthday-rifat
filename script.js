@@ -1,10 +1,13 @@
-// Initialize EmailJS with your user ID
+// Initialize EmailJS with user ID
 (function() {
     emailjs.init("mC6GMM4COU56Tm3-Z"); // Replace with your EmailJS user ID
 })();
 
-// Function to send message using EmailJS
+// Send message using EmailJS
 function sendMessage(name, email, message) {
+    const loadingButton = document.querySelector("footer button");
+    loadingButton.textContent = "Sending..."; // Show loading message
+
     emailjs.send("service_fg0ucbc", "template_txen3ai", {
         to_name: "Rifat",
         from_name: name,
@@ -14,88 +17,72 @@ function sendMessage(name, email, message) {
     .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
         alert('Your message has been sent successfully!');
-        // Clear form fields after successful submission
         document.getElementById('contactForm').reset();
     }, function(error) {
         console.log('FAILED...', error);
         alert('Failed to send your message. Please try again later.');
+    })
+    .finally(() => {
+        loadingButton.textContent = "Send Birthday Email"; // Reset button text
     });
 }
 
-// Function to handle contact form submission
+// Handle form submission
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Fetch form values
     const formData = new FormData(event.target);
     const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
 
-    // Validate form inputs (basic validation)
     if (!name || !email || !message) {
         alert('Please fill in all fields.');
         return;
     }
 
-    // Send message using EmailJS
     sendMessage(name, email, message);
 });
 
-// Function to send birthday email using EmailJS
+// Send birthday email (improved check for sending once per year)
 function sendBirthdayEmail() {
-    emailjs.send("service_fg0ucbc", "template_txen3ai", {
-        to_name: "Rifat",
-        from_name: "Fattah",
-        to_email: "rifat2456852@gmail.com",
-        message: "Dear Rifat,\n\nOn your special day, I want to wish you all the happiness in the world. May your day be filled with laughter, joy, and unforgettable moments. You deserve the best, today and always!\n\nHappy birthday, my dear friend!\n\nWith love,\nOne of your best Friends Fattah"
-    })
-    .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        alert('Birthday email sent successfully!');
-    }, function(error) {
-        console.log('FAILED...', error);
-        alert('Failed to send the birthday email. Please try again later.');
-    });
-
-    // Store the current year in local storage to ensure the email is sent only once per year
-    localStorage.setItem('lastSentYear', new Date().getFullYear());
-}
-
-// Function to check if today is the birthday and if the email has already been sent this year
-function checkAndSendEmail() {
     const today = new Date();
-    const birthdayMonth = 5; // February (month is 0-indexed)
+    const birthdayMonth = 1; // February (0-indexed)
     const birthdayDate = 23;
     const birthdayHour = 13;
 
-    // Get the year when the email was last sent from local storage
     const lastSentYear = localStorage.getItem('lastSentYear');
 
     if (today.getMonth() === birthdayMonth && today.getDate() === birthdayDate && today.getHours() === birthdayHour) {
         if (lastSentYear !== today.getFullYear().toString()) {
-            sendBirthdayEmail();
+            emailjs.send("service_fg0ucbc", "template_txen3ai", {
+                to_name: "Rifat",
+                from_name: "Fattah",
+                to_email: "rifat2456852@gmail.com",
+                message: "Happy Birthday, Rifat! Wishing you joy and happiness."
+            })
+            .then(function(response) {
+                console.log('Birthday Email Sent!');
+                alert('Birthday email sent successfully!');
+                localStorage.setItem('lastSentYear', today.getFullYear());
+            }, function(error) {
+                alert('Error in sending birthday email.');
+            });
         } else {
-            console.log('Birthday email already sent this year.');
+            alert('You have already sent the birthday email this year!');
         }
     }
 }
 
-// Function to handle manual email sending button click
-document.getElementById('sendEmailButton').addEventListener('click', function() {
-    sendBirthdayEmail();
-});
-
-// Function to handle confetti effect on clicking cake image
+// Confetti effect
 document.getElementById('cakeImg').addEventListener('click', function() {
     alert('Happy Birthday, Rifat! 🎉🎂');
 
-    // Add confetti effect
-    confetti.start();
-    setTimeout(() => {
-        confetti.stop();
-    }, 3000); // Stop confetti after 3 seconds
+    const confetti = new ConfettiGenerator({
+        target: 'cakeImg',
+        max: 150,
+        size: 2,
+        animate: true
+    });
+    confetti.render();
 });
-
-// Run the email check immediately when the page loads
-checkAndSendEmail();
