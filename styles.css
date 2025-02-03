@@ -1,21 +1,26 @@
+/* CSS Variables */
+:root {
+    --primary-color: #ff1744;
+    --secondary-color: #ff5252;
+    --background-color: #f5f5f5;
+    --button-color: #ff5252;
+    --button-hover-color: #ff1744;
+}
+
+/* General Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
 }
 
 header {
-    background: linear-gradient(135deg, #ff1744 0%, #ff5252 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     padding: 50px 0;
     text-align: center;
     transition: background-color 0.3s;
-}
-
-header h1 {
-    font-size: 3rem;
-    animation: fadeInDown 1s ease-in-out;
 }
 
 header img {
@@ -23,7 +28,7 @@ header img {
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     height: auto;
-    width: 125px;
+    width: 150px;
 }
 
 header img:hover {
@@ -31,6 +36,7 @@ header img:hover {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Main Layout */
 main {
     padding: 20px;
 }
@@ -41,16 +47,19 @@ section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin-bottom: 20px;
-    animation: fadeInUp 1s ease-in-out;
 }
 
-.memory-img {
+.memory-img,
+.gallery-img,
+.friend-img {
     transition: filter 0.5s, transform 0.3s;
-    border: 3px solid #ff1744;
+    border: 3px solid var(--primary-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.memory-img:hover {
+.memory-img:hover,
+.gallery-img:hover,
+.friend-img:hover {
     filter: brightness(1.1);
     transform: scale(1.05);
 }
@@ -63,7 +72,7 @@ footer {
 }
 
 footer:hover {
-    background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
 
 footer p {
@@ -71,7 +80,7 @@ footer p {
 }
 
 footer button {
-    background-color: #ff5252;
+    background-color: var(--button-color);
     border: none;
     color: white;
     padding: 10px 20px;
@@ -80,26 +89,8 @@ footer button {
 }
 
 footer button:hover {
-    background-color: #ff1744;
+    background-color: var(--button-hover-color);
     transform: scale(1.05);
-}
-
-.friend-img {
-    max-width: 110px;
-    max-height: 110px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 3px solid #ff1744;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.friend-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .contact-form input,
@@ -111,21 +102,7 @@ footer button:hover {
     border: 1px solid #ccc;
 }
 
-.contact-form button {
-    background-color: #ff5252;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #ff1744;
-    transform: scale(1.05);
-}
-
-/* Keyframe animations */
+/* Keyframe Animations */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -135,37 +112,4 @@ footer button:hover {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff;
-    transition: color 0.3s;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #ff1744;
-}
-
-.gallery-img {
-    max-width: 100%;
-    margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 3px solid #ff1744;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
