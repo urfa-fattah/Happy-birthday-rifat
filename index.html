@@ -3,59 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rifat's Birthday</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="description" content="A special birthday website for Rifat.">
+    <title>Happy Birthday, Rifat!</title>
+
+    <!-- Bootstrap & Custom Stylesheets -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+
     <script type="text/javascript">
         (function() {
-            emailjs.init("mC6GMM4COU56Tm3-Z"); // Replace with your EmailJS user ID
+            emailjs.init("mC6GMM4COU56Tm3-Z"); // Initialize EmailJS with user ID
         })();
     </script>
 </head>
 <body>
+
+    <!-- Navbar Section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#">Birthday Wishes</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#wish">Wish</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#memory">Memory</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#amici">Amici Forever</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Your Wish</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="#wish">Wish</a></li>
+                <li class="nav-item"><a class="nav-link" href="#memory">Memory</a></li>
+                <li class="nav-item"><a class="nav-link" href="#friends">Amici Forever</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Your Wish</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="text-center py-5 mt-5">
         <h1>Happy Birthday, Rifat!</h1>
         <img src="rifat.jpg" alt="Rifat" id="cakeImg" class="rounded-circle mt-4">
     </header>
 
     <main class="container my-5">
+        <!-- Best Wishes Section -->
         <section id="wish" class="mb-5 p-4 rounded shadow-sm">
             <h2 class="text-danger text-center">Best Wishes for You</h2>
             <p>Dear Rifat,</p>
-            <p>On your special day, I want to wish you all the happiness in the world. May your day be filled with laughter, joy, and unforgettable moments. You deserve the best, today and always!</p>
+            <p>On your special day, I want to wish you all the happiness in the world. May your day be filled with laughter, joy, and unforgettable moments.</p>
             <p>Happy birthday, my dear friend!</p>
             <p>With love,</p>
-            <p>One of your best Friends Fattah</p>
+            <p>Fattah</p>
         </section>
 
+        <!-- Memory Section -->
         <section id="memory" class="mb-5">
+            <h2 class="text-center text-danger">Memory Lane</h2>
             <div class="row">
                 <div class="col-md-3 mb-4">
                     <img src="memories1.jpg" alt="Memory 1" class="img-fluid rounded memory-img">
@@ -72,33 +72,9 @@
             </div>
         </section>
 
-        <section id="amici" class="text-center p-5 rounded shadow-sm">
-            <h3 class="text-danger">Best Friends</h3>
-            <div class="d-flex justify-content-center">
-                <img src="friend1.jpg" alt="Friend 1" class="rounded-circle friend-img mx-2"><br>
-                <img src="friend2.jpg" alt="Friend 2" class="rounded-circle friend-img mx-2"><br>
-                <img src="friend3.jpg" alt="Friend 3" class="rounded-circle friend-img mx-2">
-            </div>
-        </section>
-
-        <section id="gallery" class="mb-5">
-            <h2 class="text-danger text-center mb-4">Gallery</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <img src="gallery1.jpg" alt="Gallery 1" class="img-fluid rounded gallery-img">
-                </div>
-                <div class="col-md-4 mb-4">
-                    <img src="gallery2.jpg" alt="Gallery 2" class="img-fluid rounded gallery-img">
-                </div>
-                <div class="col-md-4 mb-4">
-                    <img src="gallery3.jpg" alt="Gallery 3" class="img-fluid rounded gallery-img">
-                </div>
-            </div>
-        </section>
-
+        <!-- Contact Section (Wish Form) -->
         <section id="contact" class="text-center p-5 rounded shadow-sm">
-            <h2 class="text-danger mb-4">You can also <b>Wish Him
-             </b></h2>
+            <h2 class="text-danger mb-4">Send Your Wish</h2>
             <form id="contactForm" class="contact-form">
                 <div class="form-group">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
@@ -109,16 +85,18 @@
                 <div class="form-group">
                     <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-danger btn-lg">Wish Him</button>
+                <button type="submit" class="btn btn-danger btn-lg">Wish Rifat</button>
             </form>
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer class="text-center py-3">
-        <p>&copy; 2024 Urfa Hasan Fattah |<br> Birthday Gift for Rifat</p>
+        <p>&copy; 2024 Fattah | Birthday Gift for Rifat</p>
         <button id="sendEmailButton" class="btn btn-outline-light btn-lg mt-3">Send Birthday Email</button>
     </footer>
 
+    <!-- JavaScript Files -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
